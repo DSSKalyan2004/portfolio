@@ -1,17 +1,14 @@
-// Function to show the selected section
-function showSection(sectionId) {
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.style.display = 'none'; // Hide all sections
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("#contact form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        
+        let name = document.querySelector("input[name='name']").value;
+        let email = document.querySelector("input[name='email']").value;
+        let recipient = document.querySelector("input[name='recipient']").value;
+        let message = document.querySelector("textarea[name='message']").value;
+        
+        let mailtoLink = `mailto:${recipient}?subject=Message from ${name}&body=From: ${name} (${email})%0D%0A%0D%0A${message}`;
+        
+        window.location.href = mailtoLink;
     });
-
-    const sectionToShow = document.getElementById(sectionId);
-    if (sectionToShow) {
-        sectionToShow.style.display = 'block'; // Show the selected section
-    }
-}
-
-// Default to displaying the "Home" section on page load
-document.addEventListener('DOMContentLoaded', function () {
-    showSection('home'); // Show Home section by default
 });
