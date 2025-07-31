@@ -1,3 +1,20 @@
+/* Responsive project links for mobile view */
+.responsive-project-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .responsive-project-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .responsive-project-links .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
 :root {
   --primary-color: #4361ee;
   --primary-dark: #3a56d4;
@@ -100,12 +117,26 @@ ul {
 }
 
 .btn-icon {
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px !important;
+  aspect-ratio: 1 / 1;
+  font-size: 1.5rem;
+}
+@media (max-width: 576px) {
+  .btn-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.3rem;
+  }
 }
 
 .resume-btn {

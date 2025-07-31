@@ -17,7 +17,7 @@
 <body>
   <header>
     <nav>
-      <div class="logo" style="font-style: myFont;">Shiva Sai Kalyan</div>
+      <div class="logo">Shiva Sai Kalyan</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -361,7 +361,7 @@
           <div class="project-info">
             <div class="project-header">
               <h3>Random Memes Generator</h3>
-              <div class="project-links">
+              <div class="project-links responsive-project-links">
                 <a href="https://github.com/DSSKalyan2004/Random-memes-generator" class="btn btn-icon" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
@@ -459,10 +459,6 @@
                 aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://github.com/DSSKalyan2004" target="_blank" aria-label="GitHub"><i
                   class="fab fa-github"></i></a>
-              <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter"><i
-                  class="fab fa-twitter"></i></a>
-              <a href="https://medium.com/yourprofile" target="_blank" aria-label="Medium"><i
-                  class="fab fa-medium-m"></i></a>
             </div>
           </div>
         </div>
@@ -502,6 +498,22 @@ Experienced in building responsive websites with Firebase and modern deployment 
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Mobile menu toggle functionality
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked (for better UX)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 
 </html>
